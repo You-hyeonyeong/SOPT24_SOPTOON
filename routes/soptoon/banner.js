@@ -7,14 +7,14 @@ const statusCode = require('../../utils/statusCode');
 
 /*
     METHOD  : GET
-    url     : /webtoon/main/banner
+    url     : /soptoon/banner
     메인 배너 가져오기
 */
-router.get('/banner', async(req, res) => {
+router.get('/', async(req, res) => {
     //배너 json형태로 보내주기
 
-    
-    let imgjson = [{
+
+    let imgJson = [{
         "imgTitle": "banner_1",
         "imgUrl": "https://image-comic.pstatic.net/webtoon/557676/thumbnail/thumbnail_IMAG02_d49b96e6-d028-4813-85f4-e527e6058f20.jpg"
     },
@@ -27,7 +27,7 @@ router.get('/banner', async(req, res) => {
         "imgUrl": "https://image-comic.pstatic.net/webtoon/728900/thumbnail/thumbnail_IMAG02_7d6efcd1-8d65-4946-95e1-8c1a5c52afa8.jpg"
     }]
     
-    res.status(200).send(utils.successTrue(statusCode.OK, resMessage.BANNER_SUCCESS));
+    res.status(200).send(utils.successTrue(statusCode.OK, resMessage.BANNER_SUCCESS, imgJson));
 
 });
 module.exports = router;

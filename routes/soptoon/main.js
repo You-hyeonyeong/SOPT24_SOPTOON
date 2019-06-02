@@ -20,7 +20,7 @@ router.get('/:flag', async(req, res) => {
         if(!getMain0Result) {
             res.status(200).send(utils.successFalse(statusCode.BAD_REQUEST, resMessage.MAIN_DB_SELECT_ERROR));
         } else {
-            res.status(200).send(utils.successTrue(statusCode.OK, resMessage.MAIN0_SUCCESS));
+            res.status(200).send(utils.successTrue(statusCode.OK, resMessage.MAIN0_SUCCESS, getMain0Result));
             console.log(getMain0Result);
         }
     } else if (flag == 1){
@@ -29,7 +29,7 @@ router.get('/:flag', async(req, res) => {
         if(!getMain1Result) {
             res.status(200).send(utils.successFalse(statusCode.BAD_REQUEST, resMessage.MAIN_DB_SELECT_ERROR));
         } else {
-            res.status(200).send(utils.successTrue(statusCode.OK, resMessage.MAIN1_SUCCESS));
+            res.status(200).send(utils.successTrue(statusCode.OK, resMessage.MAIN1_SUCCESS, getMain1Result));
             console.log(getMain1Result);
         }
  
@@ -39,22 +39,12 @@ router.get('/:flag', async(req, res) => {
          if(!getMain2Result) {
             res.status(200).send(utils.successFalse(statusCode.BAD_REQUEST, resMessage.MAIN_DB_SELECT_ERROR));
         } else {
-            res.status(200).send(utils.successTrue(statusCode.OK, resMessage.MAIN2_SUCCESS));
+            res.status(200).send(utils.successTrue(statusCode.OK, resMessage.MAIN2_SUCCESS, getMain2Result));
             console.log(getMain2Result);
         }
     } else {
         res.status(200).send(utils.successFalse(statusCode.BAD_REQUEST, resMessage.WRITE_FLAG_VALUE));
     } 
-});
-/*
-    METHOD  : GET
-    url     : /webtoon/main/banner
-    메인 배너 가져오기
-*/
-router.get('/banner', async(req, res) => {
-    //배너 json형태로 보내주기
-
-
 });
 
 
