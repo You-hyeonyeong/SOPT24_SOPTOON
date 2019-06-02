@@ -32,5 +32,9 @@ module.exports =  {
     FAIL_CSV_READ: "csv 읽기 실패",
     FAIL_CSV_WRITE: "csv 쓰기 실패",
 
-    WRITE_FLAG_VALUE : "flag값 입력하세요"
+    WRITE_FLAG_VALUE : "flag값 입력하세요",
+
+    GET_COMMENT_SUCCESS : "댓글 데이터 가져오기 성공",
+    GET_COMMENT_FAIL : "댓글 데이터 가져오기 실패"
+
 }
