@@ -28,6 +28,7 @@ module.exports =  {
     MAIN0_SUCCESS : "메인(인기) 조회 성공",
     MAIN1_SUCCESS : "메인(신작)) 조회 성공",
     MAIN2_SUCCESS : "메인(완결) 조회 성공",
+    BANNER_SUCCESS : "배너 조회 성공",
 
     FAIL_CSV_READ: "csv 읽기 실패",
     FAIL_CSV_WRITE: "csv 쓰기 실패",
