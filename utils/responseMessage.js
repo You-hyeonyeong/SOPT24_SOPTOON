@@ -37,6 +37,10 @@ module.exports =  {
     WRITE_FLAG_VALUE : "flag값 입력하세요",
 
     GET_COMMENT_SUCCESS : "댓글 데이터 가져오기 성공",
-    GET_COMMENT_FAIL : "댓글 데이터 가져오기 실패"
+    GET_COMMENT_FAIL : "댓글 데이터 가져오기 실패",
+    FAIL_GET_IMAGES : "이미지 데이터 가져오기 실패",
+    ENROLL_COMMENT_SUCCESS : "댓글 등록 성공",
 
+    CHANGE_LIKE_ON : "좋아요 등록",
+    CHANGE_LIKE_OFF : "좋아요 취소"
 }
