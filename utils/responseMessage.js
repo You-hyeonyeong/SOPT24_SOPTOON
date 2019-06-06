@@ -40,6 +40,7 @@ module.exports =  {
     GET_COMMENT_FAIL : "댓글 데이터 가져오기 실패",
     FAIL_GET_IMAGES : "이미지 데이터 가져오기 실패",
     ENROLL_COMMENT_SUCCESS : "댓글 등록 성공",
+    ENROLL_COMMENT_FAIL : "댓글 등록 실패",
 
     CHANGE_LIKE_ON : "좋아요 등록",
     CHANGE_LIKE_OFF : "좋아요 취소"

@@ -5,9 +5,9 @@ const pool = require('../config/dbConfig');
 
 module.exports = { // 두 개의 메소드 module화
     queryParam_None: async(...args) => { // (...args) expression은 arrow function 사
+        console.log(args[0]);
         const query = args[0];
         let result;
-
         try {
             var connection = await pool.getConnection(); // connection을 pool에서 하나 가져온다.
             result = await connection.query(query) || null; // query문의 결과 || null 값이 result에 들어간다.

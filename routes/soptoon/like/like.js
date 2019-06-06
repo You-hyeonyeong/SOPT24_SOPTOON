@@ -13,24 +13,25 @@ const db = require('../../../module/pool');
 //
 router.post('/', async (req, res) => {
     //좋아요 상태 요청
-    const getLikeQuery = `SELECT * FROM webtoonIdx WHERE webtoonIdx = ${req.body.webtoonIdx} AND userIdx = ${req.body.userIdx}`
+    const getLikeQuery = `SELECT * FROM webtoonLike WHERE webtoonIdx = ${req.body.webtoonIdx} AND userIdx = ${req.body.userIdx}`
     const getLikeDb = await db.queryParam_None(getLikeQuery);
-    console.log(getLikeDb);
+    // console.log(getLikeDb);
 
     //좋아요 상태 변경
     if (!getLikeDb) {   
-        const enrollLikeQuery = `INSERT INTO webtoonIdx (webtoonIdx, userIdx, likeOnOff) VALUES (${req.body.webtoonIdx}, ${req.body.userIdx}, 1)`
+        const enrollLikeQuery = `INSERT INTO webtoonLike (webtoonIdx, userIdx, likeOnOff) VALUES (${req.body.webtoonIdx}, ${req.body.userIdx}, 1)`
         await db.queryParam_None(enrollLikeQuery);
         res.status(200).send(utils.successTrue(statusCode.OK, resMessage.CHANGE_LIKE_ON));
     }   
     else {
-        if (getLikeQuery[0]['likeOnOff'] == 0) {
-            const updateLikeQuery = `UPDATE webtoonIdx SET (likeIdx, webtoonIdx, userIdx, likeOnOff) VALUES (${getLikeQuery[0]['likeOnOff']}, ${req.body.webtoonIdx}, ${req.body.userIdx}, 1)`
+        console.log(getLikeDb[0]['likeOnOff']);
+        if (getLikeDb[0]['likeOnOff'] == 0) {
+            const updateLikeQuery = `UPDATE webtoonLike SET likeOnOff = 1 WHERE webtoonIdx = ${req.body.webtoonIdx} AND userIdx = ${req.body.userIdx}`
             await db.queryParam_None(updateLikeQuery);
             res.status(200).send(utils.successTrue(statusCode.OK, resMessage.CHANGE_LIKE_ON));
         }
         else {
-            const updateLikeQuery = `UPDATE webtoonIdx SET (likeIdx, webtoonIdx, userIdx, likeOnOff) VALUES (${getLikeQuery[0]['likeOnOff']}, ${req.body.webtoonIdx}, ${req.body.userIdx}, 0)`
+            const updateLikeQuery = `UPDATE webtoonLike SET likeOnOff = 0 WHERE webtoonIdx = ${req.body.webtoonIdx} AND userIdx = ${req.body.userIdx}`
             await db.queryParam_None(updateLikeQuery);
             res.status(200).send(utils.successTrue(statusCode.OK, resMessage.CHANGE_LIKE_OFF));
         }
