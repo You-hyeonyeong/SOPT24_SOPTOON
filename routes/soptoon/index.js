@@ -6,5 +6,6 @@ router.use('/banner', require('./banner'));
 router.use('/ep', require('./ep'));
 router.use('/epcontent', require('./epcontent'));
 router.use('/comments', require('./comment'))
+router.use('/like', require('./like'))
 
 module.exports = router;
