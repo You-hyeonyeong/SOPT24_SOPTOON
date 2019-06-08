@@ -35,6 +35,7 @@ module.exports =  {
     EPISODE_CONTENT_SUCCESS : "에피소드 상세 조회 성공",
 
     WRITE_FLAG_VALUE : "flag값 입력하세요",
+    UPLOAD_FILE : "파일 업로드 하세요",
 
     GET_COMMENT_SUCCESS : "댓글 데이터 가져오기 성공",
     GET_COMMENT_FAIL : "댓글 데이터 가져오기 실패"
