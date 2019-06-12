@@ -48,7 +48,7 @@ router.post('/:episodeIdx', upload.single("commentImg"), async (req, res) => {
     const userQuery = `SELECT userIdx FROM user WHERE userId = ${reqBodyJson.userId}`;
     const userNameDb = await db.queryParam_None(userQuery);
 
-    commentDataJson = {
+    let commentDataJson = {
         commentImg: req.file.location,
         userIdx: userNameDb[0].userIdx,
         comment: reqBodyJson.commentContent,
