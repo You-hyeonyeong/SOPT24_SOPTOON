@@ -30,6 +30,8 @@ module.exports =  {
     MAIN0_SUCCESS : "메인(인기) 조회 성공",
     MAIN1_SUCCESS : "메인(신작)) 조회 성공",
     MAIN2_SUCCESS : "메인(완결) 조회 성공",
+    MAIN_ENROLL_SUCCESS : "메인 웹툰 등록 성공",
+    MAIN_ENROLL_FAIL : "메인 웹툰 등록 실패",
     BANNER_SUCCESS : "배너 조회 성공",
     EPISODE_SUCCESS : "에피소드 조회 성공",
     EPISODE_CONTENT_SUCCESS : "에피소드 상세 조회 성공",
