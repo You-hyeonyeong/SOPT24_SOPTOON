@@ -5,7 +5,8 @@ const utils = require('../../utils/utils');
 const resMessage = require('../../utils/responseMessage');
 const statusCode = require('../../utils/statusCode');
 const db = require('../../module/pool');
-const encrytion = require('../../module/encrytionModule')
+const encrytion = require('../../module/encrytionModule');
+const jwt = require('../../module/jwt');
 
 //로그인
 router.post('/', async(req, res) => {
@@ -26,7 +27,16 @@ router.post('/', async(req, res) => {
             const hashedPw = await encrytion.onlyEncrytion(pw, selectResult[0].salt)
             
             if (selectResult[0].userPw == hashedPw.hashedPassword) {
-                res.status(200).send(utils.successTrue(statusCode.CREATED, resMessage.LOGIN_SUCCESS));
+                const userData = {
+                    idx : 1,
+                    grade : 0,
+                    name : "상윤리",
+                    super : "유혀녕"
+                }
+                const tokenValue = jwt.sign(userData);
+                // const decodedJwt = jwt.verify(tokenValue.token);
+                // console.log(decodedJwt);
+                res.status(200).send(utils.successTrue(statusCode.CREATED, resMessage.LOGIN_SUCCESS, tokenValue));
             } else {
                 res.status(200).send(utils.successFalse(statusCode.BAD_REQUEST, resMessage.MISS_MATCH_PW));
             }
