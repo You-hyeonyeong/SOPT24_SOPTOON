@@ -15,7 +15,7 @@ router.get('/:flag', async(req, res) => {
     const flag = req.params.flag;
 
     if(flag == 0) {
-        const getMain0Query = 'SELECT * FROM webtoon ORDER BY webtoonLike DESC'; //인기
+        const getMain0Query = 'SELECT * FROM webtoon WHERE webtoonCom = 0 ORDER BY webtoonLike DESC'; //인기
         const getMain0Result = await db.queryParam_None(getMain0Query);
         if(!getMain0Result) {
             res.status(200).send(utils.successFalse(statusCode.BAD_REQUEST, resMessage.MAIN_DB_SELECT_ERROR));
@@ -24,7 +24,7 @@ router.get('/:flag', async(req, res) => {
             console.log(getMain0Result);
         }
     } else if (flag == 1){
-        const getMain1Query = 'SELECT * FROM webtoon ORDER BY webtoonDate DESC'; //신작
+        const getMain1Query = 'SELECT * FROM webtoon WHERE webtoonCom = 0 ORDER BY webtoonDate DESC'; //신작
         const getMain1Result = await db.queryParam_None(getMain1Query);
         if(!getMain1Result) {
             res.status(200).send(utils.successFalse(statusCode.BAD_REQUEST, resMessage.MAIN_DB_SELECT_ERROR));

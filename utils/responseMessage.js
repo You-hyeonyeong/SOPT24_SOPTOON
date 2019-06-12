@@ -25,7 +25,8 @@ module.exports =  {
     USER_DB_SELECT_ERROR : "유저 DB조회 실패",
     MAIN_DB_SELECT_ERROR : "메인 DB조회 실패",
     EPISODE_DB_SELECT_ERROR : "에피소드 DB조회 실패",
-    EPISODE_CONTENT_DB_SELECT_ERROR : "에피소드상세 DB조회 실패",
+    EPISODE_DB_CREATE_ERROR : "에피소드 DB등록 실패",
+    EPISODE_CONTENT_DB_SELECT_ERROR : "에피소드 상세 DB조회 실패",
     EPISODE_EMPTY : "에피소드가 없습니다",
     MAIN0_SUCCESS : "메인(인기) 조회 성공",
     MAIN1_SUCCESS : "메인(신작)) 조회 성공",
@@ -33,8 +34,10 @@ module.exports =  {
     BANNER_SUCCESS : "배너 조회 성공",
     EPISODE_SUCCESS : "에피소드 조회 성공",
     EPISODE_CONTENT_SUCCESS : "에피소드 상세 조회 성공",
+    EPISODE_CREATE : "에피소드 등록 성공",
 
     WRITE_FLAG_VALUE : "flag값 입력하세요",
+    WRITE_VALUE : "값 입력하세요",
     UPLOAD_FILE : "파일 업로드 하세요",
 
     GET_COMMENT_SUCCESS : "댓글 데이터 가져오기 성공",
